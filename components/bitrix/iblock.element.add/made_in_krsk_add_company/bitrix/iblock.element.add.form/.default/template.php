@@ -1,5 +1,12 @@
 <?
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
+
+if (!empty($arResult["ERRORS"])):?>
+	<?=ShowError(implode("<br />", $arResult["ERRORS"]))?>
+<?endif;
+if (strlen($arResult["MESSAGE"]) > 0):?>
+	<?=ShowNote($arResult["MESSAGE"])?>
+<?endif?>
 <form name="iblock_add" action="<?=POST_FORM_ACTION_URI?>" method="post" enctype="multipart/form-data">
 	<?=bitrix_sessid_post()?>
 	<?if ($arParams["MAX_FILE_SIZE"] > 0):?><input type="hidden" name="MAX_FILE_SIZE" value="<?=$arParams["MAX_FILE_SIZE"]?>" /><?endif?>
@@ -325,25 +332,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 			<?endif?>
 		</tbody>
 		<?endif?>
-		<tfoot>
-			<tr>
-				<td colspan="2">
-					<input type="submit" name="iblock_submit" value="<?=GetMessage("IBLOCK_FORM_SUBMIT")?>" />
-					<?if (strlen($arParams["LIST_URL"]) > 0):?>
-						<input type="submit" name="iblock_apply" value="<?=GetMessage("IBLOCK_FORM_APPLY")?>" />
-						<input
-							type="button"
-							name="iblock_cancel"
-							value="<? echo GetMessage('IBLOCK_FORM_CANCEL'); ?>"
-							onclick="location.href='<? echo CUtil::JSEscape($arParams["LIST_URL"])?>';"
-						>
-					<?endif?>
-				</td>
-			</tr>
-		</tfoot>
 	</table>
 </form>
-
 <?$APPLICATION->IncludeComponent("bitrix:map.yandex.search", "made_in_krsk_location", Array(
 	"INIT_MAP_TYPE" => "PUBLIC",	// Стартовый тип карты
 	"MAP_WIDTH" => "auto",	// Ширина карты
@@ -363,3 +353,17 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 	),
 	false
 );?>
+
+<input type="submit" name="iblock_submit" value="<?=GetMessage("IBLOCK_FORM_SUBMIT")?>" />
+					<?if (strlen($arParams["LIST_URL"]) > 0):?>
+						<input type="submit" name="iblock_apply" value="<?=GetMessage("IBLOCK_FORM_APPLY")?>" />
+						<input
+							type="button"
+							name="iblock_cancel"
+							value="<? echo GetMessage('IBLOCK_FORM_CANCEL'); ?>"
+							onclick="location.href='<? echo CUtil::JSEscape($arParams["LIST_URL"])?>';"
+						>
+					<?endif?>
+<pre>
+	<?echo print_r($arResult);?>
+</pre>
