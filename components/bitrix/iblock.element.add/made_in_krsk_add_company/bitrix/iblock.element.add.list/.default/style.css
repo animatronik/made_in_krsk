@@ -2,3 +2,26 @@
 {
 	width: 100%;
 }
+
+.firm-head h3
+{
+	float: left;
+}
+
+.firm-logo
+{
+	float: right;
+	margin-right: 20px;
+}
+
+.firm-info
+{
+	clear: both;
+	max-width: 75%;
+	background: rgba(0,0,100,0.05);
+	padding: 20px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
