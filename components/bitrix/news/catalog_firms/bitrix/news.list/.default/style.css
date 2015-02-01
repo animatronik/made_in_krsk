@@ -6,3 +6,8 @@ div.news-list img.preview_picture
 .news-date-time {
 	color:#486DAA;
 }
+
+.news-list
+{
+	max-width: 70%;
+}
