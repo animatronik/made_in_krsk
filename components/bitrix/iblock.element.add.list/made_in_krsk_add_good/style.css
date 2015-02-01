@@ -1,0 +1,29 @@
+.data-table
+{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.data-table thead
+{
+	text-align: center;
+}
+.data-table thead td
+{
+	border-left: 1px solid rgba(0,0,0,.1);
+	border-right: 1px solid rgba(0,0,0,.1)
+}
+
+.data-table td
+{
+	border-top: 1px solid rgba(0,0,0,.4);
+	padding: 5px;
+	text-transform: lowercase;
+}
+.data-table td:first-child{text-align: center;}
+.data-table td:first-letter{text-transform: uppercase;}
+
+.bt
+{
+	padding: 5px;
+}
