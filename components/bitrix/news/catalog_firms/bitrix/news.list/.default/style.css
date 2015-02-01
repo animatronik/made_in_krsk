@@ -9,5 +9,26 @@ div.news-list img.preview_picture
 
 .news-list
 {
-	max-width: 70%;
+
+}
+
+
+.head-item
+{
+	width: 100%;
+}
+.name-item
+{
+	float: left;
+	width: 70%;
+	padding: 20px 45px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.picture-item
+{
+	float: right;
+	width: 30%;
 }

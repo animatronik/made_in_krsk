@@ -1161,4 +1161,26 @@ div.slider
 }
 /*end UL in tabs*/
 
-/* end mycss */
+/*лейаут страницы с каталогом*/
+.left-block
+{
+	width: 25%;
+	float: left;
+}
+
+.right-block
+{
+	width: 70%;
+	float: right;
+}
+
+.clearfix
+{
+    content: "";
+    display: table;
+    clear: both;
+    *zoom: 1;
+}
+
+/*end лейаут страницы с каталогом*/
+/*end mycss */
